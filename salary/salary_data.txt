@@ -1,0 +1,10 @@
+Ivan Petrov,4500
+Olena Kovalenko,5200
+Dmytro Shevchenko,3800
+Maria Tkachenko,4100
+Andriy Bondarenko,3500
+Yulia Melnik,4800
+Sergiy Kravchenko,3200
+Natalia Moroz,5500
+Volodymyr Lysenko,4000
+Kateryna Savchenko,4700
