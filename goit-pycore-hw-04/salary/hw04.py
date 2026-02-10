@@ -51,18 +51,21 @@ def print_directory_structure(path, prefix=""):
         directories = [item for item in items if item.is_dir()]
         files = [item for item in items if item.is_file()]
 
+        # Загальна кількість елементів
+        total_items = len(directories) + len(files)
+
         # Виводимо папки
         for i, directory in enumerate(directories):
-            is_last_dir = (i == len(directories) - 1) and len(files) == 0
+            is_last = (i + len(files) == total_items - 1)
 
             # Визначаємо символи переходу
-            connector = "└── " if is_last_dir else "├── "
+            connector = "└── " if is_last else "├── "
 
             # Виводимо назву папки синім кольором
             print(f"{prefix}{connector}{Fore.BLUE}{directory.name}{Style.RESET_ALL}")
 
             # Визначаємо префікс для наступного рівня
-            extension = "    " if is_last_dir else "│   "
+            extension = "    " if is_last else "│   "
 
             # Рекурсивно виводимо вміст папки
             print_directory_structure(
@@ -72,10 +75,10 @@ def print_directory_structure(path, prefix=""):
 
         # Виводимо файли
         for i, file in enumerate(files):
-            is_last_file = i == len(files) - 1
+            is_last = (i == len(files) - 1)
 
             # Визначаємо символи переходу
-            connector = "└── " if is_last_file else "├── "
+            connector = "└── " if is_last else "├── "
 
             # Виводимо назву файлу залежно від розширення
             file_color = get_file_color(file)
