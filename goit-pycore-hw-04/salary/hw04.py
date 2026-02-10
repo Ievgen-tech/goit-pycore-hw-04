@@ -93,7 +93,7 @@ def main():
     # Перевіряємо, чи передан аргумент
     if len(sys.argv) < 2:
         print(f"{Fore.RED}Помилка: Шлях до директорії не передано.{Style.RESET_ALL}")
-        print("Використання: python hw03.py <шлях_до_директорії>")
+        print("Використання: python hw04.py <шлях_до_директорії>")
         sys.exit(1)
 
     path_str = sys.argv[1]
